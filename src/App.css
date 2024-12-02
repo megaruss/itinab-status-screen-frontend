@@ -1,0 +1,137 @@
+:root {
+  --status-ok-color: green;
+  --status-error-color: rgb(189, 0, 0);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.app {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(to bottom, var(--status-error-color), #860000);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-left h1 {
+  margin: 0;
+}
+
+.header-right .logo {
+  height: 40px;
+  margin-right: 40px;
+  margin-top: 4px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px; /* Adjust based on header height */
+  padding: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.column {
+  flex: 1;
+  margin: 0 10px;
+  border-radius: 14px 0 14px 0; /* Only round top-left and bottom-right corners */
+  padding: 0px;
+  background: #2b2b2b;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* NetworkWidget styles */
+.widget {
+  background: #2b2b2b;
+  border-radius: 14px 0 0 0; /* Only round top-left corner */
+  color: white;
+}
+
+.widget-header {
+  padding: 10px;
+  height: 40px;
+  border-radius: 14px 0 0 0; /* Only round top-left corner */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.widget-header .status-ok {
+  background-color: var(--status-ok-color);
+}
+
+.widget-header.status-error {
+  background-color: var(--status-error-color);
+}
+
+.widget h2 {
+  color: white;
+  margin: 0;
+  padding: 5px;
+  font-size: 2em;
+}
+
+.status-item {
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 15px 20px;
+  overflow: hidden;
+}
+
+.status-item span {
+  margin-left: 10px;
+}
+
+.badge {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  width: 80px;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-ok.badge {
+  background-color: var(--status-ok-color);
+}
+
+.status-error.badge {
+  background-color: var(--status-error-color);
+  animation: blink 1s infinite;
+}
+
+.badge-icon {
+  margin-left: 5px;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
